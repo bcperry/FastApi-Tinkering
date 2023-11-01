@@ -1,0 +1,1 @@
+FastAPI to provide access to the model to start the backend, use: uvicorn backend:app --reload
