@@ -9,11 +9,12 @@ class TestEvent(unittest.TestCase):
         """ Test that the Processing module can be imported. """
         import Processing
     
-    def test_response_time(self):
+    def test_event_duration(self):
         '''tests response time'''
         from Processing.processing import Event
-        event = Event()
-        self.assertIsNotNone(event.response_time().seconds)
+        from datetime import datetime
+        event = Event(startTime=datetime.fromisoformat('2011-11-04T00:05:23Z'), endTime=datetime.fromisoformat('2011-11-04T00:05:24Z'))
+        self.assertEquals(event.event_duration().seconds, 1)
 
 if __name__ == '__main__':
     unittest.main()

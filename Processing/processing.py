@@ -2,8 +2,7 @@
 
 from datetime import datetime
 
-class Event:
-    
+class Event: 
     """
     A class to represent a test event.
     ...
@@ -17,11 +16,10 @@ class Event:
 
     Methods
     -------
-    response_time():
+    event_time():
         Calculate the response time for the event.
 
     """
-
     def __init__(self, startTime=datetime.now(), endTime=datetime.now()):
         """
         Constructs all the necessary attributes for the person object.
@@ -33,33 +31,27 @@ class Event:
             endTime : dateTime
                 defaults to the current time
         """
-
         self.startTime = startTime
         self.endTime = endTime
 
-    def response_time(self):
+    def event_duration(self):
         """
         calculates the time elapsed from event start
 
-        If the argument 'additional' is passed, then it is appended after the main info.
-
         Parameters
         ----------
-        additional : str, optional
-            More info to be displayed (default is None)
+        None
 
         Returns
         -------
-        None
-
-        Tests
-        -----
-        >>> e = Event()
-        >>> print(e.response_time())
-        6
+        startTime : dateTime
+        Event time in Seconds
         """
-        return datetime.now() - self.startTime
+        return self.endTime - self.startTime
+
+
+
+
 
 if __name__ == '__main__':
-    import doctest
-    doctest.testmod(extraglobs={'t': Event()})
+    pass
